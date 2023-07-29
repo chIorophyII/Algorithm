@@ -6,16 +6,17 @@ class Main {
         int N = sc.nextInt();
         int answer = 0;
 
-        for (int i=0; i < N / 3; i++) {
-            if ((N-(3*i)) % 5 == 0) {
-                answer = ((N-(3*i)) / 5) + i;
+        while (N >= 0) {
+            if (N % 5 == 0) {
+                answer += N / 5;
                 break;
-            } else if (N % 3 == 0){
-                answer = N / 3;
-            } else {
-                answer = -1;
             }
+            N -= 3;
+            answer += 1;
+
+
         }
-        System.out.println(answer);;
+        if (N < 0) answer = -1;
+        System.out.println(answer);
     }
 }
